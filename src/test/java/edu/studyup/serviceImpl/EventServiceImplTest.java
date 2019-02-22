@@ -212,9 +212,8 @@ class EventServiceImplTest {
 		student.setEmail("maryje@email.com");
 		student.setId(2);
 		eventServiceImpl.addStudentToEvent(student, eventID);
-		Student checkStudent = new Student();
-		checkStudent = DataStorage.eventData.get(eventID).getStudents().get(1);
-		
+		Student checkStudent = DataStorage.eventData.get(eventID).getStudents().get(1);
+
 		assertEquals(2, DataStorage.eventData.get(eventID).getStudents().size());
 		assertEquals("Mary", checkStudent.getFirstName());
 		assertEquals("Jane", checkStudent.getLastName());
@@ -266,10 +265,8 @@ class EventServiceImplTest {
 		student.setId(2);
 		
 		eventServiceImpl.addStudentToEvent(student, 2);
-		
-		Student checkStudent = new Student();
-		checkStudent = DataStorage.eventData.get(2).getStudents().get(0);
-		
+		Student checkStudent = DataStorage.eventData.get(2).getStudents().get(0);
+    
 		assertEquals("Mary", checkStudent.getFirstName());
 		assertEquals("Jane", checkStudent.getLastName());
 		assertEquals(2, checkStudent.getId());
